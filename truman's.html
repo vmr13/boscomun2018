@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+       <style>
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+.close:hover,
+.close:focus {
+  box-shadow: 
+    inset -3.5em 0 0 0 var(--hover),
+    inset 3.5em 0 0 0 var(--hover);  
+}
+
+.raise:hover,
+.raise:focus {
+    
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: #ffa260, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+body {
+  color: #fff;
+  background: hsl(227, 10%, 10%);
+  font: 300 1em 'Fira Sans', sans-serif;
+  
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 { font-weight: 400; }
+
+code { 
+  color: #e4cb58;
+  font: inherit;
+}
+        </style>
+        <link rel="shortcut icon" type="image/ico" href="images/Truman'sCabinet.png">
+         <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize1.css">
+    <link rel="stylesheet" href="css/demo1.css">
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Truman's Cabinet</title>
+		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
+		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container" style="background-image: url(images/back.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover">
+			<ul id="gn-menu" class="gn-menu-main">
+				<div class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+                        	<li><a href="index.html" class="gn-icon gn-icon-home" style="font-size: 1.5rem;color: black">Home</a></li>
+
+								<li>
+									<div class="gn-icon gn-icon-com" style="color: black;font-size: 1.5rem">Committees</div>
+									<ul class="gn-submenu">
+										<li><a href="unhsc.html" class="gn-icon gn-icon-earth">UN Historic Security Council</a></li>
+										<li><a href="truman's.html" class="gn-icon gn-icon-truman"  style="background-color:cadetblue;color: white">Truman's Cabinet</a></li>
+										<li><a href="sicily.html" class="gn-icon gn-icon-sicily">The Sicily Conference</a></li>
+                                        <li><a href="muslimleague.html" class="gn-icon gn-icon-muslim">Muslim League</a></li>
+									</ul>
+								</li>
+                            	<li><a href="secretariat.html" class="gn-icon gn-icon-article" style="color: black;font-size: 1.5rem">Secretariat</a></li>
+
+								<li>
+									<div class="gn-icon gn-icon-download" style="color: black;font-size: 1.5rem">Downloads</div>
+									<ul class="gn-submenu">
+                                        <li><a href="ConferenceHandbook.pdf" class="gn-icon gn-icon-downloads">Conference Handbooks</a></li>
+									</ul>
+								</li>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmjg8CuJitY92jpEN10PDZ7tS6JBYS58mqim2xdVSCZv541w/viewform?c=0&w=1"class="gn-icon gn-icon-article" style="color: black;font-size: 1.5rem">Individual Aplications</a></li>								<li><a href="contact.html" class="gn-icon gn-icon-help" style="color: black;font-size: 1.5rem">Contact Us</a></li>
+                            <li><a href="team.html" class="gn-icon gn-icon-team" style="color: black;font-size: 1.5rem">Tech Team</a></li>
+
+								
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</div>
+				
+				<li></li>
+			</ul>
+            <div style="padding-top: 4rem">
+			<center>
+                <img style="width: 45%" src="images/Truman'sCabinet.png"><br><br>
+                <div style="color: white;width: 80%;font-size: 1.2rem;font-family:serif">
+                 In 1945, War 2 ended when President Truman ordered Hiroshima and Nagasaki. He hoped the chaos would end with it. It didn’t. In 1949, President Truman’s newly installed Cabinet is grappling with issues galore. From the Soviets, to the Chinese, to the Koreas and Germanys (Germanies?), and back to the Soviets, they need to fix it all. Be there for Bosco MUN ’18 as Truman’s cabinet aims to conquer solve it all.
+                </div><br><br><br>
+                
+             <div class="buttons">
+ <a style="color: white" href="Truman's%20Cabinet%20Study%20Guide.pdf"> <button class="raise" style="font-size: 1.5rem">Study Guide</button></a>
+</div>
+                <img src="images/Truman's%20Cabinet.png" style="width: 55%">
+                
+                <center>
+                  <br><br>  <div style="color: white">© 2018, Don Bosco School Park Circus.</div><br><br><br>
+                </center></center>
+                </div>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+        <script src='js/anime.min.js'></script>
+<script src='js/segment.min.js'></script>
+<script src='js/demo.js'></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+	</body>
+</html>
